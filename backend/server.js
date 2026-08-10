@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 // Connect to MongoDB
 mongoose
@@ -86,5 +86,5 @@ app.get("/api/predictions", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Backend running on http://localhost:${PORT}`);
+  console.log(`Backend running on port ${PORT}`);
 });
