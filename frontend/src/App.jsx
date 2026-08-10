@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "http://localhost:5001/api";
+const API_URL = "https://fraud-backend-qeu2.onrender.com/api";
 
 const PRIMARY_FEATURES = [
   { key: "Time", hint: "Seconds since first transaction in dataset" },
