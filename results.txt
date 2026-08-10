@@ -1,0 +1,32 @@
+Final Model: XGBoost
+
+Dataset:
+Total Transactions: 284807
+Legitimate: 284315
+Fraud: 492
+
+Train/Test Split:
+Training: 227845
+Testing: 56962
+
+SMOTE:
+Before:
+Legitimate: 227451
+Fraud: 394
+
+After:
+Legitimate: 227451
+Fraud: 227451
+
+Baseline XGBoost:
+ROC-AUC: 0.9796447736382116
+PR-AUC: 0.8649736391160664
+
+Fraud Class:
+Precision: 0.60
+Recall: 0.86
+F1-Score: 0.71
+
+Fraud Prediction Test:
+Prediction: Fraud
+Fraud Probability: 0.99995065
