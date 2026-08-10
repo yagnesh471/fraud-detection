@@ -33,13 +33,14 @@ app.get("/", (req, res) => {
 
 
 // Prediction route
+// Prediction route
 app.post("/api/predict", async (req, res) => {
     try {
         const transaction = req.body;
 
-        // Send transaction to Flask ML API
+        // Send transaction to deployed Flask ML API
         const response = await axios.post(
-            "http://127.0.0.1:5000/predict",
+            `${process.env.ML_API_URL}/predict`,
             transaction
         );
 
@@ -47,10 +48,10 @@ app.post("/api/predict", async (req, res) => {
 
         // Save prediction to MongoDB
         const savedPrediction = await Prediction.create({
-    prediction: result.prediction,
-    fraudProbability: result.fraudProbability,
-    amount: Number(transaction.Amount)
-});
+            prediction: result.prediction,
+            fraudProbability: result.fraudProbability,
+            amount: Number(transaction.Amount)
+        });
 
         res.json({
             prediction: result.prediction,
